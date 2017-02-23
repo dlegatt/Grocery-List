@@ -6,10 +6,17 @@ import { HttpModule } from '@angular/http';
 import { AlertModule } from 'ng2-bootstrap';
 
 import { AppComponent } from './app.component';
+import {GroceryService} from "./grocery.service";
+import { ItemDetailsComponent } from './item-details/item-details.component';
+import { ItemListComponent } from './item-list/item-list.component';
+import { ItemComponent } from './item/item.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ItemDetailsComponent,
+    ItemListComponent,
+    ItemComponent
   ],
   imports: [
     BrowserModule,
@@ -17,7 +24,7 @@ import { AppComponent } from './app.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [GroceryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,3 +1,5 @@
-<alert type="success" dismissOnTimeout="5000">
-  Whee!
-</alert>
+<div class="container">
+  <app-item-list [items]="groceryItems | async" (onSelect)="select($event)"></app-item-list>
+  <app-item-details [item]="groceryItem | async"></app-item-details>
+</div>
+

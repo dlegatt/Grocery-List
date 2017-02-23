@@ -1,0 +1,8 @@
+<div class="list-group">
+  <button type="button"
+          class="list-group-item"
+          *ngFor="let i of items"
+          [ngClass]="{'list-group-item-info': selectedId == i.id}"
+          (click)="select(i.id)"
+  >{{i.name}}</button>
+</div>

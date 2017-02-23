@@ -1,0 +1,5 @@
+<button type="button"
+        class="list-group-item"
+        [ngClass]="{'list-group-item-info': selectedId == i.id}"
+        (click)="select(i.id)"
+>{{i.name}}</button>
