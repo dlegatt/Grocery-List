@@ -4,30 +4,30 @@
       Selected list item
     </h3>
   </div>
-    <table class="table">
+    <table class="table" *ngIf="item">
       <tr>
-        <th class="col-sm-3">ID</th>
-        <td class="col-sm-9">{{item.id}}</td>
+        <th class="col-sm-6">ID</th>
+        <td class="col-sm-6">{{item.id}}</td>
       </tr>
       <tr>
-        <th class="col-sm-3">Name</th>
-        <td class="col-sm-9">{{item.name}}</td>
+        <th class="col-sm-6">Name</th>
+        <td class="col-sm-6">{{item.name}}</td>
       </tr>
       <tr>
-        <th class="col-sm-3">Description</th>
-        <td class="col-sm-9">{{item.description}}</td>
+        <th class="col-sm-6">Description</th>
+        <td class="col-sm-6">{{item.description}}</td>
       </tr>
       <tr>
-        <th class="col-sm-3">Store Aisle</th>
-        <td class="col-sm-9">{{item.aisle}}</td>
+        <th class="col-sm-6">Store Aisle</th>
+        <td class="col-sm-6">{{item.aisle}}</td>
       </tr>
       <tr>
-        <th class="col-sm-3">Price Each</th>
-        <td class="col-sm-9">{{item.unitPrice}}</td>
+        <th class="col-sm-6">Price Each</th>
+        <td class="col-sm-6">{{item.unitPrice | currency:'USD':true}}</td>
       </tr>
       <tr>
-        <th class="col-sm-3">Quantity</th>
-        <td class="col-sm-9">{{item.quantity}}</td>
+        <th class="col-sm-6">Quantity</th>
+        <td class="col-sm-6">{{item.quantity}}</td>
       </tr>
     </table>
 

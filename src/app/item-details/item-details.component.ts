@@ -1,5 +1,6 @@
 import {Component, OnInit, Input} from '@angular/core';
 import {GroceryItem} from "../GroceryItem";
+import { BehaviorSubject } from "rxjs";
 
 @Component({
   selector: 'app-item-details',
@@ -7,10 +8,20 @@ import {GroceryItem} from "../GroceryItem";
   styleUrls: ['./item-details.component.css']
 })
 export class ItemDetailsComponent implements OnInit {
-  @Input() item: GroceryItem;
+  private _item = new BehaviorSubject<GroceryItem>(null);
+  groceryItem: GroceryItem;
   constructor() { }
 
   ngOnInit() {
+    this._item.subscribe(item => this.groceryItem = this.item)
   }
 
+  @Input()
+  set item(value: GroceryItem){
+    this._item.next(value);
+  }
+
+  get item(){
+    return this._item.getValue();
+  }
 }

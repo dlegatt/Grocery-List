@@ -9,14 +9,12 @@ import { AppComponent } from './app.component';
 import {GroceryService} from "./grocery.service";
 import { ItemDetailsComponent } from './item-details/item-details.component';
 import { ItemListComponent } from './item-list/item-list.component';
-import { ItemComponent } from './item/item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ItemDetailsComponent,
-    ItemListComponent,
-    ItemComponent
+    ItemListComponent
   ],
   imports: [
     BrowserModule,

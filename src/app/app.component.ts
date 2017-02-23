@@ -14,7 +14,10 @@ export class AppComponent implements OnInit{
 
   constructor(private svc: GroceryService){}
   ngOnInit(){
-    this.groceryItems = this.svc.getGroceryItems();
+    // this.groceryItems = this.svc.getGroceryItems();
+    this.groceryItems = this.svc.getGroceryItems().do(
+        items => this.select(items[0].id)
+    )
   }
 
   select(id){

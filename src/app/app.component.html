@@ -1,5 +1,17 @@
 <div class="container">
-  <app-item-list [items]="groceryItems | async" (onSelect)="select($event)"></app-item-list>
-  <app-item-details [item]="groceryItem | async"></app-item-details>
+  <div class="row">
+    <h1>Grocery List</h1>
+    <hr>
+  </div>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+      <app-item-list [items]="groceryItems | async" (onSelect)="select($event)"></app-item-list>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <app-item-details [item]="groceryItem | async" *ngIf="groceryItems"></app-item-details>
+    </div>
+  </div>
 </div>
 

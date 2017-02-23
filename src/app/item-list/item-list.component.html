@@ -1,8 +1,8 @@
 <div class="list-group">
-  <button type="button"
-          class="list-group-item"
-          *ngFor="let i of items"
-          [ngClass]="{'list-group-item-info': selectedId == i.id}"
-          (click)="select(i.id)"
-  >{{i.name}}</button>
+  <div *ngFor="let i of items"
+            (click)="select(i.id)"
+            [ngClass]="{'list-group-item-success': selectedId === i.id}"
+            class="list-group-item"
+
+  >{{i.name}} <span class="badge badge-blue">{{i.unitPrice * i.quantity | currency:'USD':true}}</span></div>
 </div>

@@ -29,17 +29,12 @@ export class GroceryService {
 
   private fetchGroceryItems(){
     let groceryItems = GROCERY_ITEMS;
-    this.groceryItemsObservable = Observable.create(
-        observer => {
-          observer.next(groceryItems)
-        }
-        )
-        .map(res => res)
+    this.groceryItemsObservable =
+        Observable.create(observer => observer.next(groceryItems))
+        .map(groceryItems => groceryItems)
         .do(groceryItems => {
-          setTimeout(() => {
             this.groceryItems = groceryItems;
             this.groceryItemsObservable = null;
-          },150);
         })
         ;
     return this.groceryItemsObservable;
